@@ -12,7 +12,7 @@ const searchIndex = [
         keywords: "一覧, 目次, まとめ, 初心者, やり方, 流れ, 基礎, 基本, グッズ交換"
     },
     {
-        title: "【第1回】グッズ交換の全5ステップ",
+        title: "【第1回】お取引の全体像",
         url: "公開記事/article_step1.html",
         category: "article",
         keywords: "初心者, 流れ, 探し方, 梱包, 発送, 受取, 完了, 基礎知識, ステップ"
@@ -24,16 +24,52 @@ const searchIndex = [
         keywords: "Twitter, X, アカウント作成, 趣味垢, 分ける理由, メリット, 鍵垢, プロフィール"
     },
     {
-        title: "【第3回】ID付き画像の正しい撮り方",
-        url: "#",
+        title: "【第3回】お取引の種類（交換・譲渡・買取）",
+        url: "公開記事/article_step3.html",
         category: "article",
-        keywords: "写真, 撮り方, ID, 住所, 悪用防止, 構図, 明るさ, NG例, 準備中"
+        keywords: "交換, 譲渡, 買取, 種類, 違い, 基本, 初心者"
     },
     {
-        title: "【第10回】基本の梱包ガイド",
-        url: "#",
+        title: "【第4回】交換募集ツイートの出し方",
+        url: "公開記事/article_step4.html",
         category: "article",
-        keywords: "梱包, 100均, プチプチ, スリーブ, 硬質ケース, 折れ防止, 水濡れ防止, 準備中"
+        keywords: "ツイート, 募集, テンプレート, コピペ, 出し方, X, Twitter"
+    },
+    {
+        title: "【第5回】お取引垢のプロフィール作成術",
+        url: "公開記事/article_step5.html",
+        category: "article",
+        keywords: "プロフィール, ツイフィール, リットリンク, 固定ツイート, 信頼, 安心"
+    },
+    {
+        title: "【第6回】DMでのやり取りの流れと注意点",
+        url: "公開記事/article_step6.html",
+        category: "article",
+        keywords: "DM, やり取り, テンプレート, マナー, 住所交換, 確定"
+    },
+    {
+        title: "【第7回】グッズ別「梱包の正解」ガイド",
+        url: "公開記事/article_step7.html",
+        category: "article",
+        keywords: "梱包, プチプチ, 厚紙補強, 水濡れ防止, 缶バッジ, アクスタ, 紙類"
+    },
+    {
+        title: "【第8回】発送後の対応とDM削除",
+        url: "公開記事/article_step8.html",
+        category: "article",
+        keywords: "発送, 領収書, 追跡, 受取連絡, DM削除, マナー"
+    },
+    {
+        title: "【第9回】お取引でのNG事項とミス",
+        url: "公開記事/article_step9.html",
+        category: "article",
+        keywords: "NG, ミス, トラブル, 注意, 晒し, 回避, 詐欺"
+    },
+    {
+        title: "【第10回】匿名配送と郵便局留め",
+        url: "公開記事/article_step10.html",
+        category: "article",
+        keywords: "匿名配送, 郵便局留め, メルカリ便, 住所教えない, 家族にバレない"
     }
 ];
 
