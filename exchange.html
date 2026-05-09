@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グッズ交換 | LovaMe</title>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LovaMe">
+    <meta property="og:title" content="グッズ交換 | LovaMe">
+    <meta property="og:url" content="https://lovame-official.com/exchange.html">
+    <meta property="og:description" content="初めてのグッズ交換でも安心。探し方、声掛け、DMマナー、梱包・発送方法まで、お取引の全ステップを詳しく解説します。">
+    <meta name="description" content="初めてのグッズ交換でも安心。探し方、声掛け、DMマナー、梱包・発送方法まで、お取引の全ステップを詳しく解説します。">
+    <meta property="og:image" content="my-icon2.jpg">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://lovame-official.com/exchange.html">
+    <link rel="icon" href="my-icon.png" type="image/png">
+
+    <!-- Google Analytics (GA4) -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+
+    <!-- Google AdSense -->
+    <!-- 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="header-home-link" data-i18n="header.home">＜ HOME</a>
+            <div class="header-actions">
+                <div class="language-switcher">
+                    <span class="globe-icon">🌐</span>
+                    <select id="language-selector" onchange="setLanguage(this.value)">
+                        <option value="ja">🇯🇵 日本語</option>
+                        <option value="en">🇺🇸 English</option>
+                        <option value="zh_TW">🇹🇼 繁體中文</option>
+                        <option value="ko">🇰🇷 한국어</option>
+                        <option value="zh_CN">🇨🇳 简体中文</option>
+                    </select>
+                </div>
+                <a href="https://www.instagram.com/lovame_official/" target="_blank" rel="noopener noreferrer"
+                    class="header-icon-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="header-icon">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="https://x.com/lovame_official" target="_blank" rel="noopener noreferrer"
+                    class="header-icon-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="header-icon">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                        </path>
+                    </svg>
+                </a>
+                <button class="search-trigger" onclick="openSearch()">🔍</button>
+            </div>
+            <div class="profile-icon">
+                <img src="my-icon.png" alt="Profile Icon">
+            </div>
+        </header>
+
+        <main>
+            <nav class="breadcrumbs">
+                <ul>
+                    <li><a href="index.html" data-i18n="nav.home">HOME</a></li>
+                    <li data-i18n="nav.exchange">グッズ交換 How To</li>
+                </ul>
+            </nav>
+            <div class="content-area">
+                <h2 data-i18n="nav.exchange">グッズ交換 How To</h2>
+                <ul class="article-list">
+                    <li>
+                        <a href="公開記事/article_step1.html" class="article-list-item">
+                            <span class="article-date">2026.03.16</span>
+                            <span class="article-title">【第1回】もう怖くない！グッズ交換の「探し方」から「完了」までの全5ステップ</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="公開記事/article_step2.html" class="article-list-item">
+                            <span class="article-date">2026.03.26</span>
+                            <span class="article-title">【第2回】なぜ「お取引専用垢」が必要なの？趣味垢と分けるメリットと作り方</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <a href="index.html" class="back-button" data-i18n="header.home">＜ HOME</a>
+        </main>
+
+        <footer>
+            <div class="footer-links">
+                <a href="about.html" data-i18n="footer.about">運営者情報</a>
+                <a href="privacy.html" data-i18n="footer.privacy">プライバシーポリシー</a>
+                <a href="terms.html" data-i18n="footer.terms">利用規約</a>
+            </div>
+            <p class="copyright" data-i18n="footer.copyright">&copy; 2026 LovaMe. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Search Modal -->
+    <div id="search-modal" class="search-modal">
+        <div class="search-content">
+            <div class="search-header">
+                <input type="text" id="search-input" placeholder="キーワードを入力..." oninput="performSearch(this.value)">
+                <button class="close-search" onclick="closeSearch()">×</button>
+            </div>
+            <div id="search-results"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'ja';
+            setLanguage(savedLang);
+        });
+    </script>
+</body>
+
+</html>
