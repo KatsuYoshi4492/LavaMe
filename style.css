@@ -957,3 +957,68 @@ body.lang-zh_CN [data-lang="ja"] {
     margin-bottom: 15px;
     color: var(--secondary-text);
 }
+
+/* Glossary Tooltip Feature */
+.glossary-highlight {
+    border-bottom: 2px dotted #333;
+    cursor: help;
+    position: relative;
+    font-weight: bold;
+    display: inline-block;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.glossary-highlight:hover {
+    color: #000;
+}
+
+.glossary-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    width: 240px;
+    background-color: #222;
+    color: #fff;
+    text-align: left;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    font-weight: normal;
+    line-height: 1.5;
+    
+    position: absolute;
+    z-index: 1000;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    white-space: normal;
+    pointer-events: none;
+}
+
+.glossary-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #222 transparent transparent transparent;
+}
+
+.glossary-highlight:hover .glossary-tooltip,
+.glossary-highlight.active .glossary-tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 768px) {
+    .glossary-tooltip {
+        width: 200px;
+        font-size: 0.8rem;
+    }
+}
