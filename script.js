@@ -835,10 +835,9 @@ const glossaryData = [
 
 function renderGlossary() {
     const categoryView = document.getElementById('category-view');
-    const syllabaryView = document.getElementById('syllabary-view');
     const currentLang = localStorage.getItem('selectedLanguage') || 'ja';
 
-    if (!categoryView || !syllabaryView) return;
+    if (!categoryView) return;
 
     const categories = [...new Set(glossaryData.map(item => item.category))];
     let categoryHtml = '';
@@ -870,67 +869,8 @@ function renderGlossary() {
         `;
     });
     categoryView.innerHTML = categoryHtml;
-
-    const tabs = document.querySelector('.view-tabs');
-    if (currentLang !== 'ja') {
-        syllabaryView.style.display = 'none';
-        if (tabs) tabs.style.display = 'none';
-        categoryView.style.display = 'block';
-    } else {
-        if (tabs) tabs.style.display = 'flex';
-        syllabaryView.style.display = '';
-        const groups = {
-            'あ': /^[あ-お]/, 'か': /^[か-ご]/, 'さ': /^[さ-ぞ]/, 'た': /^[た-ど]/,
-            'な': /^[な-の]/, 'は': /^[は-ぽ]/, 'ま': /^[ま-も]/, 'や': /^[や-よ]/,
-            'ら': /^[ら-ろ]/, 'わ': /^[わ-ん]/, '他': /^[^あ-ん]/
-        };
-
-        const sortedTerms = [...glossaryData].sort((a, b) => a.kana.localeCompare(b.kana, 'ja'));
-
-        let syllabaryHtml = '';
-        Object.entries(groups).forEach(([label, regex]) => {
-            const groupTerms = sortedTerms.filter(t => regex.test(t.kana));
-            if (groupTerms.length > 0) {
-                syllabaryHtml += `<div class="syllabary-section">
-                <h3 class="syllabary-title">${label}行</h3>
-                <div class="syllabary-cards">
-                    ${groupTerms.map(t => `
-                        <div class="term-card">
-                            <div class="term-header">
-                                <span class="term-name">${t.term}</span>
-                                <span class="term-reading">${t.kana}</span>
-                            </div>
-                            <p class="term-meaning">${t.desc}</p>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>`;
-            }
-        });
-        syllabaryView.innerHTML = syllabaryHtml;
-    }
 }
 
-function switchView(mode) {
-    const categoryView = document.getElementById('category-view');
-    const syllabaryView = document.getElementById('syllabary-view');
-    const tabCategory = document.getElementById('tab-category');
-    const tabSyllabary = document.getElementById('tab-syllabary');
-
-    if (!categoryView || !syllabaryView) return;
-
-    if (mode === 'category') {
-        categoryView.style.display = 'block';
-        syllabaryView.style.display = 'none';
-        tabCategory.classList.add('active');
-        tabSyllabary.classList.remove('active');
-    } else {
-        categoryView.style.display = 'none';
-        syllabaryView.style.display = 'block';
-        tabCategory.classList.remove('active');
-        tabSyllabary.classList.add('active');
-    }
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     translatePage();
