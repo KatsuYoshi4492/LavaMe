@@ -110,6 +110,9 @@ header .profile-icon {
 
 /* PC Stacked Layout */
 @media screen and (min-width: 769px) {
+    .container {
+        max-width: 800px; /* PCでは横幅を広げて読みやすくする */
+    }
     header {
         flex-direction: column;
         justify-content: center;
@@ -264,8 +267,7 @@ h2 {
 }
 
 .page-content strong {
-    display: block;
-    margin-top: 2rem;
+    display: inline;
     color: var(--text-color);
     font-weight: 800;
 }
@@ -489,6 +491,108 @@ footer {
     color: var(--secondary-text);
     margin-bottom: 10px;
     font-weight: 700;
+}
+
+/* Article Content Typography */
+.page-content h3 {
+    font-size: 1.1rem;
+    font-weight: 900;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #eee;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.page-content h3:first-child {
+    margin-top: 0;
+}
+
+.page-content ul,
+.page-content ol {
+    margin: 1rem 0 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.page-content li {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+/* Note / caution text (※で始まる注記) */
+.page-content .note-text {
+    background: #fdf6e3;
+    border-left: 4px solid #f0c040;
+    padding: 12px 16px;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: #665500;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Example / callout box (具体例・テンプレ等) */
+.page-content .example-box {
+    background: #f7f8fa;
+    border: 1px solid #e4e7ec;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+.page-content .example-box strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.92rem;
+    color: #333;
+}
+
+/* Highlight keyword inline */
+.page-content .keyword-hl {
+    background: linear-gradient(transparent 60%, #ffeaa7 60%);
+    padding: 0 2px;
+    font-weight: 700;
+}
+
+/* Article Navigation */
+.article-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    gap: 10px;
+}
+
+.article-navigation a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 12px 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.article-navigation a:hover {
+    background-color: var(--hover-bg-soft);
+    transform: translateY(-2px);
+    box-shadow: var(--soft-shadow);
+}
+
+.article-navigation .nav-next {
+    margin-left: auto;
+}
+
+.article-navigation .nav-prev {
+    margin-right: auto;
 }
 
 /* Glossary Styles */

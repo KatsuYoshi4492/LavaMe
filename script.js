@@ -929,14 +929,17 @@ function highlightGlossaryTerms() {
     if (contentAreas.length === 0) return;
 
     const lang = localStorage.getItem('selectedLanguage') || 'ja';
+    const allowedTerms = ["先送り", "手渡し", "ツイフィール", "リットリンク", "同日発送", "白紙", "予約品"];
 
     // Prepare terms
     let flatTerms = [];
     glossaryData.forEach(item => {
-        const descStr = (lang !== 'ja' && item[lang]) ? item[lang].desc : item.desc;
         const keywords = item.term.split(' / ').map(t => t.trim());
         keywords.forEach(kw => {
-            flatTerms.push({ keyword: kw, desc: descStr });
+            if (allowedTerms.includes(kw)) {
+                const descStr = (lang !== 'ja' && item[lang]) ? item[lang].desc : item.desc;
+                flatTerms.push({ keyword: kw, desc: descStr });
+            }
         });
     });
     
