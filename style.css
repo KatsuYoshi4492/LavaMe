@@ -524,14 +524,14 @@ footer {
 
 /* Note / caution text (※で始まる注記) */
 .page-content .note-text {
-    background: #fdf6e3;
-    border-left: 4px solid #f0c040;
+    background: transparent;
+    border: 2px solid #fff3cd; /* 薄黄色の枠 */
     padding: 12px 16px;
     margin: 1rem 0 1.5rem;
     font-size: 0.88rem;
     line-height: 1.7;
-    color: #665500;
-    border-radius: 0 8px 8px 0;
+    color: var(--text-color); /* 普通の文字色 */
+    border-radius: 8px;
 }
 
 /* Example / callout box (具体例・テンプレ等) */
@@ -547,9 +547,7 @@ footer {
 }
 
 .page-content .example-box strong {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 0.92rem;
+    font-weight: 800;
     color: #333;
 }
 
