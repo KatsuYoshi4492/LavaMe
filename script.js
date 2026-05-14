@@ -12,64 +12,64 @@ const searchIndex = [
         keywords: "一覧, 目次, まとめ, 初心者, やり方, 流れ, 基礎, 基本, グッズ交換"
     },
     {
-        title: "【第1回】お取引の全体像",
+        title: "【第1回】グッズ交換の「探し方」から「完了」までの全5ステップ",
         url: "公開記事/article_step1.html",
         category: "article",
         keywords: "初心者, 流れ, 探し方, 梱包, 発送, 受取, 完了, 基礎知識, ステップ"
     },
     {
-        title: "【第2回】なぜ「お取引専用垢」が必要なの？",
+        title: "【第2回】なぜ「お取引専用垢」が必要なの？趣味垢と分けるメリットと作り方",
         url: "公開記事/article_step2.html",
         category: "article",
         keywords: "Twitter, X, アカウント作成, 趣味垢, 分ける理由, メリット, 鍵垢, プロフィール"
     },
     {
-        title: "【第3回】お取引の種類（交換・譲渡・買取）",
+        title: "【第3回】お取引の3つの種類「交換・譲渡・買取」",
         url: "公開記事/article_step3.html",
         category: "article",
-        keywords: "交換, 譲渡, 買取, 種類, 違い, 基本, 初心者"
+        keywords: "種類, 違い, 交換, 譲渡, 買取, 定価, 利益, 基礎知識"
     },
     {
-        title: "【第4回】交換募集ツイートの出し方",
+        title: "【第4回】お声がけされやすい！お取引ツイートの出し方",
         url: "公開記事/article_step4.html",
         category: "article",
-        keywords: "ツイート, 募集, テンプレート, コピペ, 出し方, X, Twitter"
+        keywords: "ツイート, 募集, テンプレート, 画像, 検索避け, 拡散, お声がけ"
     },
     {
-        title: "【第5回】お取引垢のプロフィール作成術",
+        title: "【第5回】「この人なら安心」と思われる、お取引垢のプロフィール作成術",
         url: "公開記事/article_step5.html",
         category: "article",
-        keywords: "プロフィール, ツイフィール, リットリンク, 固定ツイート, 信頼, 安心"
+        keywords: "プロフィール, プロフ, 自己紹介, 信頼, リトリン, 既読印, 必読, 成人済"
     },
     {
-        title: "【第6回】DMでのやり取りの流れと注意点",
+        title: "【第6回】トラブルを防ぐ！DMでのやり取りの流れと注意点",
         url: "公開記事/article_step6.html",
         category: "article",
-        keywords: "DM, やり取り, テンプレート, マナー, 住所交換, 確定"
+        keywords: "DM, 返信, 挨拶, 例文, 敬語, マナー, 催促, 既読"
     },
     {
-        title: "【第7回】グッズ別「梱包の正解」ガイド",
+        title: "【第7回】大切なグッズを傷つけない！グッズ別「梱包の正解」ガイド",
         url: "公開記事/article_step7.html",
         category: "article",
-        keywords: "梱包, プチプチ, 厚紙補強, 水濡れ防止, 缶バッジ, アクスタ, 紙類"
+        keywords: "梱包, 缶バッジ, アクスタ, 紙類, 100均, プチプチ, スリーブ, 段ボール, 発送準備"
     },
     {
-        title: "【第8回】発送後の対応とDM削除",
+        title: "【第8回】最後まで丁寧に！発送後の対応・受け取り連絡・DM削除",
         url: "公開記事/article_step8.html",
         category: "article",
-        keywords: "発送, 領収書, 追跡, 受取連絡, DM削除, マナー"
+        keywords: "発送連絡, 受取連絡, 評価, 完了, DM削除, 個人情報, 破棄"
     },
     {
-        title: "【第9回】お取引でのNG事項とミス",
+        title: "【第9回】知らないと危険！お取引でのNG事項と、やりがちなミス",
         url: "公開記事/article_step9.html",
         category: "article",
-        keywords: "NG, ミス, トラブル, 注意, 晒し, 回避, 詐欺"
+        keywords: "NG, 禁止, ミス, トラブル, 注意喚起, ブロック, 晒し, 詐欺防止"
     },
     {
-        title: "【第10回】匿名配送と郵便局留め",
+        title: "【第10回】住所を知られたくない！「メルカリ便」や「郵便局留め」を賢く使う方法",
         url: "公開記事/article_step10.html",
         category: "article",
-        keywords: "匿名配送, 郵便局留め, メルカリ便, 住所教えない, 家族にバレない"
+        keywords: "住所, 匿名, 郵便局留め, メルカリ便, 個人情報保護, 配送サービス"
     }
 ];
 
