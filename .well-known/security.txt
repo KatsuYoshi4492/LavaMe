@@ -1,0 +1,5 @@
+Contact: https://x.com/lovame_official
+Contact: https://www.instagram.com/lovame_official/
+Preferred-Languages: ja, en
+Canonical: https://lovame-official.com/.well-known/security.txt
+Expires: 2027-07-12T00:00:00.000Z
