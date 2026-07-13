@@ -3,7 +3,9 @@ import path from 'node:path';
 
 const root = path.resolve(import.meta.dirname, '..');
 const errors = [];
-const skipDirs = new Set(['.git', 'node_modules', '記事下書き']);
+// The upstream repository currently contains a historical nested `LavaMe/` upload.
+// The deployable site is the repository root, so do not validate the archived duplicate.
+const skipDirs = new Set(['.git', 'node_modules', '記事下書き', 'LavaMe']);
 
 function walk(dir) {
   return fs.readdirSync(dir, {withFileTypes:true}).flatMap(entry => {
