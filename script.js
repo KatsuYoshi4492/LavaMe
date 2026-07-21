@@ -385,7 +385,7 @@ window.addEventListener('click', (event) => {
         banner.querySelector('button')?.focus();
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {\n        if (typeof highlightGlossaryTerms !== 'undefined') highlightGlossaryTerms();
         const consent = localStorage.getItem(CONSENT_KEY);
         if (consent === 'accepted') enableAnalytics();
         else if (consent === 'rejected') disableAnalytics();
@@ -396,3 +396,104 @@ window.addEventListener('click', (event) => {
         });
     });
 })();
+
+
+function highlightGlossaryTerms() {
+    const contentAreas = document.querySelectorAll('.page-content, .article-content');
+    if (contentAreas.length === 0) return;
+
+    const lang = localStorage.getItem('selectedLanguage') || 'ja';
+
+    // Prepare terms
+    let flatTerms = [];
+    if (typeof glossaryData !== 'undefined') {
+        glossaryData.forEach(item => {
+            const descStr = (lang !== 'ja' && item[lang]) ? item[lang].desc : item.desc;
+            const keywords = item.term.split(' / ').map(t => t.trim());
+            keywords.forEach(kw => {
+                flatTerms.push({ keyword: kw, desc: descStr });
+            });
+        });
+    } else {
+        return;
+    }
+    
+    // Sort by length descending to match longer terms first
+    flatTerms.sort((a, b) => b.keyword.length - a.keyword.length);
+
+    // Escape regex characters
+    const escapeRegExp = (string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const pattern = flatTerms.map(t => escapeRegExp(t.keyword)).join('|');
+    if (!pattern) return;
+    
+    const regex = new RegExp(`(${pattern})`, 'g');
+
+    function processNode(node) {
+        if (node.nodeType === 3) { // Text node
+            const text = node.nodeValue;
+            if (regex.test(text)) {
+                regex.lastIndex = 0;
+                const fragment = document.createDocumentFragment();
+                let lastIndex = 0;
+                
+                text.replace(regex, (match, p1, offset) => {
+                    if (offset > lastIndex) {
+                        fragment.appendChild(document.createTextNode(text.substring(lastIndex, offset)));
+                    }
+                    
+                    const termData = flatTerms.find(t => t.keyword === match);
+                    
+                    const span = document.createElement('span');
+                    span.className = 'glossary-highlight';
+                    span.textContent = match;
+                    
+                    const tooltip = document.createElement('span');
+                    tooltip.className = 'glossary-tooltip';
+                    tooltip.textContent = termData.desc;
+                    span.appendChild(tooltip);
+                    
+                    // Toggle active state for mobile
+                    span.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        // Close other tooltips
+                        document.querySelectorAll('.glossary-highlight.active').forEach(el => {
+                            if (el !== span) el.classList.remove('active');
+                        });
+                        span.classList.toggle('active');
+                    });
+                    
+                    fragment.appendChild(span);
+                    lastIndex = offset + match.length;
+                    return match;
+                });
+                
+                if (lastIndex < text.length) {
+                    fragment.appendChild(document.createTextNode(text.substring(lastIndex)));
+                }
+                
+                if (node.parentNode) {
+                    node.parentNode.replaceChild(fragment, node);
+                }
+            }
+        } else if (node.nodeType === 1) { // Element node
+            const tag = node.tagName.toLowerCase();
+            // Skip replacing text inside these tags
+            if (tag === 'script' || tag === 'style' || tag === 'a' || tag === 'button' || node.classList.contains('glossary-highlight')) {
+                return;
+            }
+            Array.from(node.childNodes).forEach(processNode);
+        }
+    }
+
+    contentAreas.forEach(area => {
+        Array.from(area.childNodes).forEach(processNode);
+    });
+    
+    // Close tooltips when clicking outside
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.glossary-highlight.active').forEach(el => {
+            el.classList.remove('active');
+        });
+    });
+}

@@ -25,12 +25,7 @@
     display: block;
 }
 
-.profile-icon img {
-    width: 150px;
-    height: auto;
-    aspect-ratio: 1;
-    object-fit: cover;
-}
+
 
 .article-grid {
     display: grid;
@@ -300,14 +295,7 @@ header {
 }
 
 /* Adjust logo centering */
-header .profile-icon {
-    margin: 0;
-    width: 140px;
-    /* Smaller for subpages headers */
-    flex-shrink: 0;
-    z-index: 10;
-    /* Ensure logo is above other elements if needed */
-}
+
 
 /* PC Stacked Layout */
 @media screen and (min-width: 769px) {
@@ -325,11 +313,7 @@ header .profile-icon {
         min-height: auto;
     }
 
-    header .profile-icon {
-        width: 180px;
-        /* Enlarge logo for brand presence */
-        margin-bottom: 10px;
-    }
+    
 
     .header-home-link {
         display: none;
@@ -357,19 +341,23 @@ header .profile-icon {
 
 
 .profile-icon {
-    width: 200px;
-    /* Increased width to accommodate logo */
-    margin: 0 auto 20px;
-    border-radius: 0;
+    width: 100vw !important;
+    margin: 0 0 20px calc(-50vw + 50%) !important;
+    background-color: #f2d9dd;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
 }
 
 .profile-icon img {
-    width: 100%;
+    width: 200px !important;
     height: auto;
     display: block;
     object-fit: contain;
-    /* Removed grayscale filter to show original colors as requested */
     filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.08));
 }
 
@@ -1170,13 +1158,7 @@ body.lang-zh_CN [data-lang="ja"] {
         display: flex !important;
     }
 
-    header .profile-icon {
-        position: static !important;
-        transform: none !important;
-        width: 120px !important;
-        margin: 10px 0 20px !important;
-        order: 2 !important;
-    }
+    
 
     .concept-message {
         order: 3 !important;
@@ -1412,5 +1394,71 @@ body.lang-zh_CN [data-lang="ja"] {
     }
     .affiliate-buttons {
         justify-content: center;
+    }
+}
+
+
+/* Glossary Tooltip Feature */
+.glossary-highlight {
+    border-bottom: 2px dotted #333;
+    cursor: help;
+    position: relative;
+    font-weight: bold;
+    display: inline-block;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.glossary-highlight:hover {
+    color: #000;
+}
+
+.glossary-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    width: 240px;
+    background-color: #222;
+    color: #fff;
+    text-align: left;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    font-weight: normal;
+    line-height: 1.5;
+    
+    position: absolute;
+    z-index: 1000;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    white-space: normal;
+    pointer-events: none;
+}
+
+.glossary-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #222 transparent transparent transparent;
+}
+
+.glossary-highlight:hover .glossary-tooltip,
+.glossary-highlight.active .glossary-tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 768px) {
+    .glossary-tooltip {
+        width: 200px;
+        font-size: 0.8rem;
     }
 }
